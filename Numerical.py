@@ -31,7 +31,6 @@ value = 1
 epsilon = 1
 #sum = value + epsilon
 counter = 0
-#test
 while value != sum:
     epsilon = epsilon / 2
     sum = value + epsilon
