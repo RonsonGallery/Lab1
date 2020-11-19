@@ -44,6 +44,11 @@ def jacobi(matrix,b):
         yn = Yn_1
         zn = Zn_1
 
+def dominant_pivot(matrix):
+    if (abs(matrix[0][0]) > abs(matrix[0][1] + matrix[0][2]) and abs(matrix[1][1]) > abs(matrix[1][0] + matrix[1][2]) and abs(matrix[2][2]) > abs(matrix[2][0] + matrix[2][1])) or (abs(matrix[0][0]) > abs(matrix[0][1]) and abs(matrix[0][0]) > abs(matrix[0][2])):
+        return True
+    print("Not a dominant pivot")
+    return False
 
 matrix = [[3,-1,1],[0,1,-1],[1,1,-2]]
 b = [4,-1,-3]
@@ -51,3 +56,4 @@ b = [4,-1,-3]
 #b2 = [4,-1,-3]
 gaus_zidel(matrix,b)
 jacobi(matrix,b)
+print(dominant_pivot(matrix))
